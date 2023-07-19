@@ -1,50 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Mi primera programada</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script>
+        //Se obtiene un número aleatorio
         function aleatorio(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
-        // 1 es piedra, 2 es papel, 3 es tijera
+        //Se establecen las posibles jugadas
+        function eleccion(jugada) {
+            if (jugada == 1) {
+                return "🥌"
+            } else if (jugada == 2) {
+                return "🧻"
+            } else if (jugada == 3) {
+                return "✂"
+            } else {
+                return "una opción no disponible para jugar😒"
+            }
+        }
+        //1 es piedra, 2 es papel, 3 es tijera
         let jugador = 0
         let pc = aleatorio(1, 3)
-        jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera")
-        // alert("Elegiste " + jugador)
-        if (jugador == 1) {
-            alert("Elegiste piedra 🪨")
-        } else if (jugador == 2) {
-            alert("Elegiste papel 📃")
-        } else if (jugador == 3) {
-            alert("Elegiste tijera ✂️")
-        } else {
-            alert("Elegiste PERDER")
+        //Elección del jugador
+        jugador = prompt("Elije 1 para piedra, 2 para papel o 3 para tijera:")
+        //alert(`Elegiste ${jugador}`)
+        alert(`Tú juegas con ${eleccion(jugador)}`)
+        alert(`El pc juega con ${eleccion(pc)}`)
+        //combate
+        function combate(pc, jugador) {
+            if (pc == jugador) {
+                alert("EMPATE 🤼‍♂️")
+            }
+            else if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)) {
+                alert("GANASTE 🏆")
+            } else {
+                alert("PERDISTE 😢")
+            }
         }
-        if (pc == 1) {
-            alert("Elegiste piedra 🪨")
-        } else if (pc == 2) {
-            alert("Elegiste papel 📃")
-        } else if (pc == 3) {
-            alert("Elegiste tijera ✂️")
-        }
-        // COMBATE
-        if (pc == jugador) {
-            alert("EMPATE")
-        } else if (jugador == 1 && pc == 3) {
-            alert("GANASTE")
-        } else if (jugador == 2 && pc == 1) {
-            alert("GANASTE")
-        } else if (jugador == 3 && pc == 2) {
-            alert("GANASTE")
-        } else {
-            alert("PERDISTE")
-        }
+        combate(pc, jugador)
     </script>
 </head>
 
 <body>
-    <h1>Piedra, papel o tijra</h1>
+    <h1>Piedra, papel o tijera</h1>
 </body>
 
 </html>
