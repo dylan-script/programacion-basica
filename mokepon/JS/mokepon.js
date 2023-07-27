@@ -9,12 +9,13 @@ function seleccionarMascotaJugador() {
     let inputHipodoge = $('hipodoge')
     let inputCapipepo = $('capipepo')
     let inputRatigueya = $('ratigueya')
+    let spanMascotaJugador = $('mascota-jugador')
     if (inputHipodoge.checked) {
-        alert('Seleccionaste a Hipodoge')
+        spanMascotaJugador.innerHTML = 'Hipodoge'
     } else if (inputCapipepo.checked) {
-        alert('Seleccionaste a Capipepo')
+        spanMascotaJugador.innerHTML = 'Capipepo'
     } else if (inputRatigueya.checked) {
-        alert('Seleccionaste a Ratigueya')
+        spanMascotaJugador.innerHTML = 'Ratigueya'
     } else {
         alert('Por favor ejige una mascota')
     }
